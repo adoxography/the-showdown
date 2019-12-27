@@ -16,7 +16,7 @@ module.exports = {
     contentBase: './dist'
   },
   entry: {
-    app: ['./src/App.jsx'],
+    app: ['./src/main.js'],
     vendor: ['react', 'react-dom']
   },
   output: {
