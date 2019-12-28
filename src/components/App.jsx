@@ -9,6 +9,7 @@ import Header from './Header';
 import Navbar from './Navbar';
 import About from './About';
 import Home from './Home';
+import Highlights from './Highlights';
 import ComingSoon from './ComingSoon';
 import Footer from './Footer';
 
@@ -24,7 +25,7 @@ const App = () => {
           </Route>
 
           <Route path="/highlights">
-            <ComingSoon />
+            <Highlights />
           </Route>
 
           <Route path="/shop">

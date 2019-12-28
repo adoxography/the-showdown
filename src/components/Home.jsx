@@ -21,7 +21,7 @@ const Home = () => (
       </p>
 
       <p className="mt-2">
-        The <strong className="font-semibold">Highlights</strong> and <strong className="font-semibold">Store</strong> are still WIP, but feel free to have a look at the <Link to="/about" className="font-semibold text-blue-700">About</Link> page.
+        The <strong className="font-semibold">Shop</strong> is still WIP, but feel free to have a look at the <Link to="/about" className="font-semibold text-blue-700">About</Link> and <Link to="/highlights" className="font-semibold text-blue-700">Highlights</Link> pages.
       </p>
 
       <div className="mx-4 mt-4">
