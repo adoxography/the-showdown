@@ -1,5 +1,6 @@
 {
   "name": "showdown",
+  "homepage": "https://adoxography.github.io/the-showdown",
   "version": "0.1.1",
   "main": "index.js",
   "dependendices": {},
@@ -33,6 +34,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
