@@ -25,8 +25,8 @@ const LargePreview = props => {
 
   return (
     <article className="relative w-48 h-48">
-      <img src={image} alt={title} className="object-cover w-full h-full" />
-      <a href="#" className="block absolute z-10 top-0 w-full h-full text-white p-2 bg-gray-900 opacity-0 hover:opacity-75">
+      <img src={image} alt={title} className="object-cover rounded-lg w-full h-full" />
+      <a href="#" className="block absolute z-10 top-0 w-full h-full text-white p-2 rounded-lg bg-gray-900 opacity-0 hover:opacity-75">
         <h1 className="text-lg font-semibold font-display ml-2">{title}</h1>
       </a>
     </article>
