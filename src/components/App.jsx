@@ -1,24 +1,43 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 import Header from './Header';
 import Navbar from './Navbar';
-import Profile from './Profile';
+import About from './About';
+import Home from './Home';
+import ComingSoon from './ComingSoon';
 import Footer from './Footer';
-
-import { profiles } from '../mock';
 
 const App = () => {
   return (
-    <React.Fragment>
-      <Header />
-      <Navbar />
-      <section className="mt-8 xl:mt-16 mx-4 md:mx-12 xl:mx-32">
-        {profiles.map((profile, i) => (
-          <Profile key={i} person={profile} />
-        ))}
-      </section>
-      <Footer />
-    </React.Fragment>
+    <Router>
+      <React.Fragment>
+        <Header />
+        <Navbar />
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+
+          <Route path="/highlights">
+            <ComingSoon />
+          </Route>
+
+          <Route path="/shop">
+            <ComingSoon />
+          </Route>
+
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+        <Footer />
+      </React.Fragment>
+    </Router>
   );
 };
 
