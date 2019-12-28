@@ -23,7 +23,7 @@ const Home = () => (
       </div>
     </div>
     <div className="hidden md:block">
-      <TwitterTimelineEmbed sourceType="profile" screenName="mikestill94" />
+      <TwitterTimelineEmbed sourceType="profile" screenName="mikestill94" autoHeight noHeader noFooter />
     </div>
   </div>
 );
