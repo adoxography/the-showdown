@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import svg from '../svg';
 
+const Loading = () => (
+  <div className="w-24 h-24 m-auto">
+    {svg.loading}
+  </div>
+);
+
 const Home = () => (
   <div className="flex px-8 md:px-16 xl:px-40 mt-4">
-    <div className="flex-grow lg:px-4">
+    <div className="lg:px-4">
       <p>
-        This is a mockup for <strong className="font-semibold">The Showdown</strong>'s website. This early draft uses a grayscale colour scheme and minimalist design. It uses <strong class="font-semibold">responsive design</strong>, meaning that the page will look different depending on the size of screen you view it on.
+        This is a mockup for <strong className="font-semibold">The Showdown</strong>'s website. This early draft uses a grayscale colour scheme and minimalist design. It uses <strong className="font-semibold">responsive design</strong>, meaning that the page will look different depending on the size of screen you view it on.
       </p>
 
       <p className="mt-2">
@@ -22,8 +28,8 @@ const Home = () => (
         {svg.underConstruction}
       </div>
     </div>
-    <div className="hidden md:block">
-      <TwitterTimelineEmbed sourceType="profile" screenName="mikestill94" autoHeight noHeader noFooter />
+    <div className="hidden md:block w-48 flex-shrink-0 flex-grow-0">
+      <TwitterTimelineEmbed sourceType="profile" screenName="mikestill94" placeholder={<Loading />} autoHeight noHeader noFooter />
     </div>
   </div>
 );
