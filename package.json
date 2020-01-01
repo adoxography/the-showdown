@@ -34,7 +34,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
-    "predeploy": "yarn build",
+    "predeploy": "yarn build && cp CNAME ./dist",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
