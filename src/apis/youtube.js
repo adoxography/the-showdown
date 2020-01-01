@@ -57,7 +57,7 @@ const waitForCondition = (func, timeout) => new Promise((resolve, reject) => {
 });
 
 export async function getPlaylistItems(playlistId) {
-  const params = { part: 'snippet', playlistId };
+  const params = { part: 'snippet', maxResults: 10, playlistId };
 
   await waitForCondition(() => gapi.client && gapi.client.youtube, 5000);
 
