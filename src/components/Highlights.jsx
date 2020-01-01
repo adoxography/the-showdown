@@ -42,24 +42,31 @@ class Highlights extends React.Component {
     super(props);
 
     this.state = {
+      playlist: playlists[0],
       videosLoaded: false,
       videos: []
     };
   }
 
   componentDidMount() {
+    const { playlist } = this.state;
+
     // Load the videos
-    getPlaylistItems(playlists[0].id).then(videos => {
+    getPlaylistItems(playlist.id).then(videos => {
       this.setState(() => ({ videosLoaded: true, videos }));
     });
   }
 
   render() {
-    const { videos, videosLoaded } = this.state;
+    const { playlist, videos, videosLoaded } = this.state;
 
     return (
       <section>
         {videosLoaded ? <Videos videos={videos} />: <Loading /> }
+
+        <div className="flex justify-center mt-8">
+          <a href={`https://www.youtube.com/playlist?list=${playlist.id}`} target="_blank" className="border border-yellow-200 text-yellow-200 hover:bg-gray-900 text-center rounded px-3 py-2">See more</a>
+        </div>
       </section>
     );
   }
