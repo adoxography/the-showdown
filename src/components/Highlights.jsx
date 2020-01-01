@@ -75,6 +75,12 @@ class Highlights extends React.Component {
     this.setState(() => ({ activeVideo: null }));
   }
 
+  componentDidMount() {
+    getPlaylistItems(playlists[0].id).then(videos => {
+      this.setState(() => ({ videosLoaded: true, videos }));
+    });
+  }
+
   render() {
     const { playlist, videos, videosLoaded } = this.state;
 
