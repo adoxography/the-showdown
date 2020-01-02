@@ -5,7 +5,7 @@ const inactiveText = 'text-gray-400';
 const hoverBg = 'hover:bg-gray-800';
 const hoverText = 'hover:text-gray-100';
 const activeBg = 'bg-yellow-200';
-const activeText = 'bg-yellow-900';
+const activeText = 'text-yellow-900';
 
 const NavLink = props => (
   <BaseNavLink
