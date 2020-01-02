@@ -64,7 +64,7 @@ class Highlights extends React.Component {
       <section>
         {videosLoaded ? <Videos videos={videos} />: <Loading /> }
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 pb-4">
           <a href={`https://www.youtube.com/playlist?list=${playlist.id}`} target="_blank" className="border border-yellow-200 text-yellow-200 hover:bg-gray-900 text-center rounded px-3 py-2">See more</a>
         </div>
       </section>
