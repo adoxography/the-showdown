@@ -13,6 +13,7 @@ const NavLink = props => (
     to={props.to}
     className={`block px-3 md:px-8 xl:px-16 ${inactiveText} ${hoverBg}`}
     activeClassName={`${activeBg} ${activeBg} ${activeText} cursor-default`}
+    onClick={props.onClick}
   >
     {props.children}
   </BaseNavLink>
@@ -47,7 +48,7 @@ class Navbar extends React.Component {
     }));
   }
 
-  handleDropdownLinkClicked = () => {
+  closeDropdown = () => {
     this.setState(() => ({ dropdown: null }));
   }
 
@@ -55,10 +56,10 @@ class Navbar extends React.Component {
     return (
       <React.Fragment>
         <nav className={`relative flex justify-center lg:justify-around border-t border-b border-yellow-200 font-display uppercase text-lg font-light mx-2 md:mx-12 xl:mx-32`}>
-          <NavLink exact to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink exact to="/" onClick={this.closeDropdown}>Home</NavLink>
+          <NavLink to="/about" onClick={this.closeDropdown}>About</NavLink>
           <DropdownLink to="highlights" onClick={this.handleDropdownClicked}>Highlights</DropdownLink>
-          <NavLink to="/shop">Shop</NavLink>
+          <NavLink to="/shop" onClick={this.closeDropdown}>Shop</NavLink>
         </nav>
 
         {this.state.dropdown && (
@@ -67,7 +68,7 @@ class Navbar extends React.Component {
               <Link
                 key={link.name}
                 to={link.uri}
-                onClick={this.handleDropdownLinkClicked}
+                onClick={this.closeDropdown}
                 className="block px-1 py-2 flex-grow text-center uppercase tracking-tight font-display font-light hover:bg-gray-800"
               >
                 {link.name}
