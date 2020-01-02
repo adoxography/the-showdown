@@ -3,11 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './src/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
+const node_env = process.env.NODE_ENV ? process.env.NODE_ENV : 'production';
 
 module.exports = {
   target: 'web',
@@ -33,7 +29,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         use: ['babel-loader']
       },
       {
@@ -46,13 +42,22 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'styles.css',
       chunkFileName: 'styles.css'
     }),
-    HtmlWebpackPluginConfig,
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+      inject: 'body'
+    }),
     new webpack.NoEmitOnErrorsPlugin()
   ],
-  mode: 'development'
+  mode: node_env
 };
