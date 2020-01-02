@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import { withRouter } from 'react-router-dom';
 
 import { getPlaylistItems, playlists } from '../apis/youtube';
 import svg from '../svg';
@@ -68,20 +69,25 @@ class Highlights extends React.Component {
     super(props);
 
     this.state = {
-      playlist: playlists[0],
       videosLoaded: false,
       videos: [],
       activeVideo: null
     };
   }
 
-  componentDidMount() {
-    const { playlist } = this.state;
+  get playlistId() {
+    return playlists[this.props.playlist];
+  }
 
+  componentDidMount() {
     // Load the videos
-    getPlaylistItems(playlist.id).then(videos => {
-      this.setState(() => ({ videosLoaded: true, videos }));
-    });
+    getPlaylistItems(this.playlistId)
+      .then(videos => {
+        this.setState(() => ({ videosLoaded: true, videos }));
+      })
+      .catch(err => {
+        this.setState(() => ({ videosLoaded: true, videos: [] }));
+      });
   }
 
   handleClick = video => {
@@ -92,14 +98,8 @@ class Highlights extends React.Component {
     this.setState(() => ({ activeVideo: null }));
   }
 
-  componentDidMount() {
-    getPlaylistItems(playlists[0].id).then(videos => {
-      this.setState(() => ({ videosLoaded: true, videos }));
-    });
-  }
-
   render() {
-    const { activeVideo, playlist, videos, videosLoaded } = this.state;
+    const { activeVideo, videos, videosLoaded } = this.state;
 
     return (
       <section>
@@ -109,7 +109,7 @@ class Highlights extends React.Component {
 
         {videosLoaded && videos.length > 0 &&
           <div className="flex justify-center mt-8 pb-4">
-            <a href={`https://www.youtube.com/playlist?list=${playlist.id}`} target="_blank" className="border border-yellow-200 text-yellow-200 hover:bg-gray-900 text-center rounded px-3 py-2">See more</a>
+            <a href={`https://www.youtube.com/playlist?list=${this.playlistId}`} target="_blank" className="border border-yellow-200 text-yellow-200 hover:bg-gray-900 text-center rounded px-3 py-2">See more</a>
           </div>
         }
       </section>

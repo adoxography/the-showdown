@@ -24,9 +24,10 @@ const App = () => {
             <About />
           </Route>
 
-          <Route path="/highlights">
-            <Highlights />
-          </Route>
+          <Route
+            path="/highlights/:playlist"
+            component={props => <Highlights playlist={props.match.params.playlist} key={props.location.pathname} />}
+          />
 
           <Route path="/shop">
             <ComingSoon />

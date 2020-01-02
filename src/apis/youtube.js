@@ -2,12 +2,9 @@ const gapi = window.gapi;
 const API_KEY = 'AIzaSyCd3cxXww1gU5i51XaSqRxiEYowcCy0oNs';
 const REST = 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest';
 
-export const playlists = [
-  {
-    name: 'Game Recaps',
-    id: 'PLsYKzSg_1lx68cpc_RG6V2spzESLqy5J1'
-  }
-];
+export const playlists = {
+  'football': 'PLsYKzSg_1lx68cpc_RG6V2spzESLqy5J1'
+};
 
 class Video {
   constructor(data) {
