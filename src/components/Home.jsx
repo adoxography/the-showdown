@@ -36,7 +36,7 @@ const Home = () => (
   <div className="flex px-8 md:px-16 xl:px-40 mt-4">
     <div className="lg:px-4">
       <p>
-        This is a mockup for <strong className="font-semibold">The Showdown</strong>'s website. This early draft uses a grayscale colour scheme and minimalist design. It uses <strong className="font-semibold">responsive design</strong>, meaning that the page will look different depending on the size of screen you view it on.
+        This is a mockup for <strong className="font-semibold">The Showdown</strong>'s website. This early draft uses a gold on warm gray colour scheme and minimalist design. It uses <strong className="font-semibold">responsive design</strong>, meaning that the page will look different depending on the size of screen you view it on.
       </p>
 
       <p className="mt-2">
