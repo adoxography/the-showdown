@@ -4,7 +4,20 @@
   "version": "0.1.1",
   "license": "UNLICENSED",
   "main": "index.js",
-  "dependendices": {},
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --open",
+    "build": "NODE_ENV=production webpack",
+    "predeploy": "yarn build && cp CNAME ./dist",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-player": "^1.14.2",
+    "react-router-dom": "^5.1.2",
+    "react-twitter-embed": "^3.0.3",
+    "tailwindcss-transitions": "^2.1.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/node": "^7.7.7",
@@ -32,19 +45,5 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.1",
     "webpack-hot-middleware": "^2.25.0"
-  },
-  "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --open",
-    "build": "NODE_ENV=production webpack",
-    "predeploy": "yarn build && cp CNAME ./dist",
-    "deploy": "gh-pages -d dist"
-  },
-  "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-player": "^1.14.2",
-    "react-router-dom": "^5.1.2",
-    "react-twitter-embed": "^3.0.3",
-    "tailwindcss-transitions": "^2.1.0"
   }
 }

@@ -14,7 +14,7 @@ module.exports = {
   },
   entry: {
     app: ['./src/main.js'],
-    vendor: ['react', 'react-dom']
+    vendor: ['react', 'react-dom', 'react-router-dom', 'react-player']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -41,6 +41,11 @@ module.exports = {
         ]
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   plugins: [
     new MiniCssExtractPlugin({
