@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import MetaTags from 'react-meta-tags';
 import svg from '../svg';
 
 const twitterCss = `
@@ -34,6 +35,11 @@ const Loading = () => (
 
 const Home = () => (
   <div className="flex px-8 md:px-16 xl:px-40 mt-4">
+    <MetaTags>
+      <title>Home | Manitoba Showdown</title>
+      <meta name="description" content="Manitoba Showdown brings you highlights of the top amateur athletes in Manitoba." />
+    </MetaTags>
+
     <div className="lg:px-4">
       <p>
         This is a mockup for <strong className="font-semibold">The Showdown</strong>'s website. This early draft uses a gold on warm gray colour scheme and minimalist design. It uses <strong className="font-semibold">responsive design</strong>, meaning that the page will look different depending on the size of screen you view it on.

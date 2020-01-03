@@ -13,3 +13,5 @@ export const waitForCondition = (func, timeout) => new Promise((resolve, reject)
 
   check();
 });
+
+export const capitalize = str => str.replace(/^\w/, c => c.toUpperCase());

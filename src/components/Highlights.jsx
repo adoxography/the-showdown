@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import MetaTags from 'react-meta-tags';
 import { withRouter } from 'react-router-dom';
 
 import { getPlaylistItems, playlists } from '../apis/youtube';
+import { capitalize } from '../util';
 import svg from '../svg';
 
 /**
@@ -103,6 +105,11 @@ class Highlights extends React.Component {
 
     return (
       <section>
+        <MetaTags>
+          <title>{capitalize(this.props.playlist)} Highlights | Manitoba Showdown</title>
+          <meta name="description" content={`Manitoba Showdown presents the newest and most exciting highlights from amateur ${this.props.playlist} in Manitoba.`} />
+        </MetaTags>
+
         {videosLoaded ? <Videos videos={videos} onClick={this.handleClick} />: <Loading /> }
 
         {activeVideo && <Player video={activeVideo} onClickOutside={this.handleClickOutside} />}
