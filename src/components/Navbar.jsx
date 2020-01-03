@@ -11,7 +11,7 @@ const NavLink = props => (
   <BaseNavLink
     exact={props.exact}
     to={props.to}
-    className={`block px-3 md:px-8 xl:px-16 ${inactiveText} ${hoverBg}`}
+    className={`block px-1 md:px-8 xl:px-16 ${inactiveText} ${hoverBg}`}
     activeClassName={`${activeBg} ${activeBg} ${activeText} cursor-default`}
     onClick={props.onClick}
   >
