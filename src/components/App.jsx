@@ -5,14 +5,14 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Header from './Header';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Header from './common/Header';
+import Navbar from './common/Navbar';
+import Footer from './common/Footer';
 
-const Home = lazy(() => import('./Home'));
-const About = lazy(() => import('./About'));
-const Highlights = lazy(() => import('./Highlights'));
-const ComingSoon = lazy(() => import('./ComingSoon'));
+const Home = lazy(() => import('./home/Home'));
+const About = lazy(() => import('./about/About'));
+const Highlights = lazy(() => import('./highlights/Highlights'));
+const ComingSoon = lazy(() => import('./common/ComingSoon'));
 
 const App = () => {
   return (

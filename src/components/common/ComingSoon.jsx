@@ -1,6 +1,6 @@
 import React from 'react';
 
-import svg from '../svg';
+import svg from '../../svg';
 
 const ComingSoon = () => (
   <section className="mt-6">

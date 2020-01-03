@@ -2,8 +2,7 @@ import React from 'react';
 import MetaTags from 'react-meta-tags';
 
 import Profile from './Profile';
-
-import { profiles } from '../mock';
+import profiles from './profile_data';
 
 const About = () => (
   <section className="mt-4 pb-1 xl:mt-8 mx-4 md:mx-12 xl:mx-32">

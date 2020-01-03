@@ -3,9 +3,9 @@ import ReactPlayer from 'react-player';
 import MetaTags from 'react-meta-tags';
 import { withRouter } from 'react-router-dom';
 
-import { getPlaylistItems, playlists } from '../apis/youtube';
-import { capitalize } from '../util';
-import svg from '../svg';
+import { getPlaylistItems, playlists } from '../../apis/youtube';
+import { capitalize } from '../../util';
+import svg from '../../svg';
 
 /**
  * Component shown while data is still being loaded

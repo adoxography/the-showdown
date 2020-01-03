@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import MetaTags from 'react-meta-tags';
-import svg from '../svg';
+import svg from '../../svg';
 
 const twitterCss = `
 .timeline-Widget {
