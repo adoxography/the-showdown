@@ -13,7 +13,7 @@ module.exports = {
     historyApiFallback: true
   },
   entry: {
-    app: ['./src/main.js'],
+    app: ['./src/main.jsx'],
     vendor: ['react', 'react-dom', 'react-router-dom', 'react-player']
   },
   output: {
@@ -49,8 +49,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
-      chunkFileName: 'styles.css'
+      filename: './styles.css',
+      chunkFileName: './styles.css'
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',

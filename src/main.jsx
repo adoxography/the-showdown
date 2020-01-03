@@ -11,8 +11,6 @@ const render = () => ReactDOM.render(<App />, $root);
 
 render();
 
-initializeYoutube();
-
 if (module.hot) {
   module.hot.accept('./components/App.jsx', render);
 }

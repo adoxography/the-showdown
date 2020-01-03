@@ -1,4 +1,4 @@
-const gapi = window.gapi;
+let gapi;
 const API_KEY = 'AIzaSyCd3cxXww1gU5i51XaSqRxiEYowcCy0oNs';
 const REST = 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest';
 
@@ -25,38 +25,28 @@ class Video {
   }
 }
 
-const loadClient = () => {
-  gapi.client.setApiKey(API_KEY);
-  gapi.client.load(REST).then(
-    () => console.log('GAPI loaded'),
-    err => console.error('GAPI load error:', err)
-  );
-};
+const ensureApiLoaded = () => new Promise((resolve, reject) => {
+  if (gapi) {
+    return resolve();
+  }
 
-export const initialize = () => {
-  gapi.load('client', loadClient);
-};
+  const script = document.createElement('script');
+  script.src = 'https://apis.google.com/js/api.js';
 
-const waitForCondition = (func, timeout) => new Promise((resolve, reject) => {
-  const startTime = Date.now();
-
-  const check = () => {
-    if (func()) {
-      resolve();
-    } else if (Date.now() > startTime + timeout) {
-      reject('Timed out!');
-    } else {
-      setTimeout(check, 1000);
-    }
+  window.gapi_onload = () => {
+    gapi = window.gapi;
+    gapi.load('client', () => {
+      gapi.client.setApiKey(API_KEY);
+      gapi.client.load(REST).then(resolve, reject);
+    });
   };
 
-  check();
+  document.body.appendChild(script);
 });
 
 export async function getPlaylistItems(playlistId) {
+  await ensureApiLoaded();
   const params = { part: 'snippet', maxResults: 10, playlistId };
-
-  await waitForCondition(() => gapi.client && gapi.client.youtube, 5000);
 
   const response = await gapi.client.youtube.playlistItems.list(params);
   const items = response.result.items;
