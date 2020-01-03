@@ -1,12 +1,12 @@
 {
   "name": "showdown",
-  "homepage": "https://adoxography.github.io/the-showdown",
+  "homepage": "https://manitobashowdown.ca",
   "version": "0.1.1",
   "license": "UNLICENSED",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --open",
-    "build": "NODE_ENV=production webpack && cp ./dist/index.html ./dist/404.html",
+    "build": "NODE_ENV=production webpack && cp ./src/404.html ./dist/404.html",
     "predeploy": "yarn build && cp CNAME ./dist",
     "deploy": "gh-pages -d dist"
   },
