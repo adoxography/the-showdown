@@ -45,9 +45,17 @@ module.exports = {
           '1000': '#8D2B0B'
         },
         gray: warmGray
+      },
+      maxHeight: {
+        '0': '0'
+      },
+      transitionProperty: {
+        'height': 'height'
       }
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require('tailwindcss-transitions')()
+  ]
 };

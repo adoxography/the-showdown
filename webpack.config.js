@@ -42,11 +42,6 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'styles.css',
