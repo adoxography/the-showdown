@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
@@ -15,7 +15,7 @@ import Footer from './Footer';
 
 const App = () => {
   return (
-    <Router basename="/">
+    <Router>
       <React.Fragment>
         <Header />
         <Navbar />
