@@ -1,4 +1,7 @@
 import ReactPlayer from 'react-player';
+import PropTypes from 'prop-types';
+
+import { Video } from '../../apis/youtube';
 
 const Player = ({ video, onClickOutside }) => (
   <div className="w-full h-full fixed top-0 left-0 flex justify-center items-center z-50" onClick={onClickOutside} style={{ backgroundColor: '#000000a0' }}>
@@ -7,5 +10,10 @@ const Player = ({ video, onClickOutside }) => (
     </div>
   </div>
 );
+
+Player.propTypes = {
+  video: PropTypes.instanceOf(Video).isRequired,
+  onClickOutside: PropTypes.func
+};
 
 export default Player;

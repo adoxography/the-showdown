@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Thumnail = ({ video, onClick }) => (
+import { Video } from '../../apis/youtube';
+
+const Thumbnail = ({ video, onClick }) => (
   <article className="relative">
     <img src={video.thumbnail} alt={video.title} className="object-cover rounded-lg w-full h-full" />
     <a onClick={() => onClick(video)} className="block absolute z-10 top-0 w-full h-full text-white p-2 rounded-lg bg-gray-900 opacity-0 hover:opacity-75">
@@ -9,4 +12,9 @@ const Thumnail = ({ video, onClick }) => (
   </article>
 );
 
-export default Thumnail;
+Thumbnail.propTypes = {
+  video: PropTypes.instanceOf(Video).isRequired,
+  onClick: PropTypes.func
+};
+
+export default Thumbnail;

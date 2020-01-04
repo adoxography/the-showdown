@@ -1,5 +1,6 @@
 import React from 'react';
 import MetaTags from 'react-meta-tags';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 import Thumbnails from './Thumbnails';
@@ -73,5 +74,9 @@ class Highlights extends React.Component {
     );
   }
 }
+
+Highlights.propTypes = {
+  playlist: PropTypes.oneOf(Object.keys(playlistData)).isRequired
+};
 
 export default Highlights;

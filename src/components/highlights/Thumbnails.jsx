@@ -1,5 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Thumbnail from './Thumbnail';
+
+import { Video } from '../../apis/youtube';
+import svg from '../../svg';
 
 const Thumbnails = ({ videos, onClick }) => {
   if (videos.length === 0) {
@@ -26,6 +30,11 @@ const Thumbnails = ({ videos, onClick }) => {
       ))}
     </div>
   );
+};
+
+Thumbnails.propTypes = {
+  videos: PropTypes.arrayOf(PropTypes.instanceOf(Video)).isRequired,
+  onClick: PropTypes.func
 };
 
 export default Thumbnails;

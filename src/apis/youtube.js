@@ -2,7 +2,7 @@ let gapi;
 const API_KEY = 'AIzaSyCd3cxXww1gU5i51XaSqRxiEYowcCy0oNs';
 const REST = 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest';
 
-class Video {
+export class Video {
   constructor(data) {
     const {
       description,
