@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { NavLink, DropdownLink } from './header_links';
 import NavDropdown from './NavDropdown';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import Thumbnail from './Thumbnail';
 
 const Thumbnails = ({ videos, onClick }) => {
@@ -20,11 +21,11 @@ const Thumbnails = ({ videos, onClick }) => {
     <div className="flex flex-wrap justify-center lg:mt-4">
       {videos.map((video, i) => (
         <div key={i} className="m-2">
-          <Thumnail key={i} video={video} onClick={onClick} />
+          <Thumbnail key={i} video={video} onClick={onClick} />
         </div>
       ))}
     </div>
   );
 };
 
-export default Thumnails;
+export default Thumbnails;
