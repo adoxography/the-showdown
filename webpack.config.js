@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 
 const node_env = process.env.NODE_ENV ? process.env.NODE_ENV : 'production';
 
@@ -59,7 +60,8 @@ module.exports = {
       inject: 'body'
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new FaviconsWebpackPlugin()
+    new FaviconsWebpackPlugin(),
+    new RobotstxtPlugin()
   ],
   mode: node_env
 };
