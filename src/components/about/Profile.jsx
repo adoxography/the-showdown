@@ -7,8 +7,8 @@ const Profile = props => {
   return (
     <div className="mb-12 md:flex">
 
-      <div className="w-48 h-48 flex-shrink-0 m-auto md:m-0 rounded-full shadow-lg bg-gray-800 text-gray-400 flex justify-center items-center">
-        {avatar ? <img src={avatar} className="object-cover w-48 h-48 rounded-full" /> : 'Image coming soon'}
+      <div className="w-48 h-48 flex-shrink-0 m-auto md:m-0 rounded-full shadow-lg bg-gray-800 text-gray-300 flex justify-center items-center">
+        {avatar ? <img src={avatar} alt={name} className="object-cover w-48 h-48 rounded-full" /> : 'Image coming soon'}
       </div>
 
       <article className="md:ml-6 md:mt-2">
