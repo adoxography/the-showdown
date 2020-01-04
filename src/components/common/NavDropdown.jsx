@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class NavDropdown extends Component {
   constructor(props) {
@@ -34,5 +35,13 @@ class NavDropdown extends Component {
     );
   }
 }
+
+NavDropdown.propTypes = {
+  isOpen: PropTypes.bool.isRequired
+};
+
+NavDropdown.defaultProps = {
+  isOpen: false
+};
 
 export default NavDropdown;
