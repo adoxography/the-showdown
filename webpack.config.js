@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const node_env = process.env.NODE_ENV ? process.env.NODE_ENV : 'production';
 
@@ -57,7 +58,8 @@ module.exports = {
       filename: './index.html',
       inject: 'body'
     }),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new FaviconsWebpackPlugin()
   ],
   mode: node_env
 };
