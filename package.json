@@ -6,9 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --open",
-    "build": "NODE_ENV=production webpack && cp ./src/404.html ./dist/404.html",
-    "predeploy": "yarn build && cp CNAME ./dist",
-    "deploy": "gh-pages -d dist"
+    "build": "NODE_ENV=production webpack"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -35,7 +33,6 @@
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.17.0",
     "favicons-webpack-plugin": "^2.1.0",
-    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.0",
