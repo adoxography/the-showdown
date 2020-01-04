@@ -1,29 +1,7 @@
 import React from 'react';
-import { Link, NavLink as BaseNavLink } from 'react-router-dom';
-
-const inactiveText = 'text-gray-400';
-const hoverBg = 'hover:bg-gray-800';
-const hoverText = 'hover:text-gray-100';
-const activeBg = 'bg-yellow-200';
-const activeText = 'text-yellow-900';
-
-const NavLink = props => (
-  <BaseNavLink
-    exact={props.exact}
-    to={props.to}
-    className={`block px-1 md:px-8 xl:px-16 ${inactiveText} ${hoverBg}`}
-    activeClassName={`${activeBg} ${activeBg} ${activeText} cursor-default`}
-    onClick={props.onClick}
-  >
-    {props.children}
-  </BaseNavLink>
-);
-
-const DropdownLink = ({ to, onClick, children }) => (
-  <a onClick={() => onClick(to)} className={`cursor-pointer block px-3 md:px-8 xl:px-16 ${inactiveText} ${hoverBg}`}>
-    {children}
-  </a>
-);
+import { Link } from 'react-router-dom';
+import { NavLink, DropdownLink } from './header_links';
+import NavDropdown from './NavDropdown';
 
 const dropdownLinks = {
   'highlights': [
@@ -34,40 +12,6 @@ const dropdownLinks = {
     { name: 'badminton', uri: '/highlights/badminton'}
   ]
 };
-
-class Dropdown extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.$el = React.createRef();
-  }
-
-  get height() {
-    return this.props.isOpen ? this.$el.current.scrollHeight : 0;
-  }
-
-  componentDidUpdate() {
-    this.$el.current.style.height = `${this.height}px`;
-  }
-
-  render() {
-    const links = this.props.links;
-
-    return (
-      <div className="flex text-base justify-around bg-gray-900 m-auto w-full flex-wrap md:px-12 xl:px-32 transition-height h-0 overflow-hidden" ref={this.$el}>
-        {links.map(link => (
-          <Link
-            key={link.name}
-            to={link.uri}
-            className="block px-1 py-2 flex-grow text-center uppercase tracking-tight font-display font-light hover:bg-gray-800"
-          >
-            {link.name}
-          </Link>
-        ))}
-      </div>
-    );
-  }
-}
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -102,7 +46,7 @@ class Navbar extends React.Component {
           <NavLink to="/shop" onClick={this.closeDropdown}>Shop</NavLink>
         </nav>
 
-        <Dropdown links={links} isOpen={this.state.isOpen} />
+        <NavDropdown links={links} isOpen={this.state.isOpen} />
       </React.Fragment>
     );
   }
