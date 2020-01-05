@@ -8,7 +8,7 @@ const dropdownLinks = {
     { name: 'volleyball', uri: '/highlights/volleyball' },
     { name: 'soccer', uri: '/highlights/soccer'},
     { name: 'hockey', uri: '/highlights/hockey'},
-    { name: 'badminton', uri: '/highlights/badminton'}
+    { name: 'basketball', uri: '/highlights/basketball'}
   ]
 };
 

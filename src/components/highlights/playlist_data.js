@@ -3,6 +3,6 @@ export default {
   soccer: '',
   volleyball: '',
   hockey: '',
-  badminton: ''
+  basketball: ''
 };
 
