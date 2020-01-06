@@ -13,7 +13,7 @@ const Thumbnails = ({ videos, onClick }) => {
           {svg.empty}
         </div>
         <div className="absolute top-0 mt-16 md:mt-20 lg:mt-32 xl:mt-40 w-full flex justify-center">
-          <p className="px-3 text-center text-display text-2xl xl:text-4xl bg-gray-1000 rounded-lg shadow-lg opacity-75">
+          <p className="cursor-default px-3 text-center text-display text-2xl xl:text-4xl bg-gray-1000 rounded-lg shadow-lg opacity-75">
             No videos yet.<br />Check back later!
           </p>
         </div>
