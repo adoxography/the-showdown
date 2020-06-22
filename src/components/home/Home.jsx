@@ -41,7 +41,7 @@ class Home extends Component {
 
         {this.state.photosLoaded && (
           <div className="mt-8 flex justify-center">
-            <a href={`https://instagram.com/thesidelineshowdown}`} target="_blank" rel="noopener" className="border border-yellow-200 text-yellow-200 hover:bg-gray-900 text-center rounded px-3 py-2">See more</a>
+            <a href={`https://instagram.com/thesidelineshowdown`} target="_blank" rel="noopener" className="border border-yellow-200 text-yellow-200 hover:bg-gray-900 text-center rounded px-3 py-2">See more</a>
           </div>
         )}
       </div>
