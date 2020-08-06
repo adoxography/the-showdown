@@ -5,7 +5,7 @@ const Footer = () => (
   <footer className="bg-gray-800 absolute bottom-0 w-full px-4 xl:px-16 h-16 pt-2 xl:pt-4 flex justify-between">
     <div>
       <p className="text-sm text-gray-300">
-        Copyright &copy; 2020 <a href="https://github.com/adoxography">Graham Still</a>
+        Website design copyright &copy; 2020 <a href="https://github.com/adoxography">Graham Still</a>
       </p>
     </div>
 
